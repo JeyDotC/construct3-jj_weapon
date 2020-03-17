@@ -1,0 +1,31 @@
+{
+  "is-c3-addon": true,
+  "type": "behavior",
+  "name": "jj_Weapon",
+  "id": "JeyDotC_jj_Weapon",
+  "version": "1.0.0.0",
+  "author": "JeyDotC",
+  "website": "https://www.construct.net",
+  "documentation": "https://www.construct.net",
+  "description": "Creates bullets by rules",
+  "editor-scripts": [
+    "behavior.js",
+    "type.js",
+    "instance.js"
+  ],
+  "file-list": [
+    "c3runtime/behavior.js",
+    "c3runtime/type.js",
+    "c3runtime/instance.js",
+    "c3runtime/conditions.js",
+    "c3runtime/actions.js",
+    "c3runtime/expressions.js",
+    "lang/en-US.json",
+    "aces.json",
+    "addon.json",
+    "icon.svg",
+    "instance.js",
+    "behavior.js",
+    "type.js"
+  ]
+}

@@ -1,0 +1,342 @@
+{
+  "custom": {
+    "conditions": [
+      {
+        "id": "is-ready",
+        "c2id": 0,
+        "scriptName": "IsReady",
+        "highlight": false
+      },
+      {
+        "id": "bullets-in-clip",
+        "c2id": 1,
+        "scriptName": "BulletsInClip",
+        "highlight": false,
+        "params": [
+          {
+            "id": "comparison",
+            "type": "cmp"
+          },
+          {
+            "id": "bullets-count",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "reload-start",
+        "c2id": 2,
+        "scriptName": "ReloadStart",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "reload-finish",
+        "c2id": 3,
+        "scriptName": "ReloadFinish",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "shoot",
+        "c2id": 4,
+        "scriptName": "Shoot",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "disabled",
+        "c2id": 5,
+        "scriptName": "Disabled",
+        "highlight": false
+      },
+      {
+        "id": "enabled",
+        "c2id": 6,
+        "scriptName": "Enabled",
+        "highlight": false
+      },
+      {
+        "id": "reload-canceled",
+        "c2id": 7,
+        "scriptName": "ReloadCanceled",
+        "highlight": false,
+        "isTrigger": true
+      },
+      {
+        "id": "last-shoot-time",
+        "c2id": 8,
+        "scriptName": "LastShootTime",
+        "highlight": false,
+        "params": [
+          {
+            "id": "comparison",
+            "type": "cmp"
+          },
+          {
+            "id": "last-shoot-time",
+            "type": "number"
+          }
+        ]
+      },
+      {
+        "id": "is-reloading",
+        "c2id": 9,
+        "scriptName": "IsReloading",
+        "highlight": false
+      }
+    ],
+    "actions": [
+      {
+        "id": "make-a-shoot",
+        "c2id": 0,
+        "scriptName": "MakeAShoot",
+        "highlight": true
+      },
+      {
+        "id": "add-bullets-to-clip",
+        "c2id": 1,
+        "scriptName": "AddBulletsToClip",
+        "highlight": false,
+        "params": [
+          {
+            "id": "count",
+            "type": "number",
+            "initialValue": "1"
+          }
+        ]
+      },
+      {
+        "id": "set-bullets-in-clip",
+        "c2id": 2,
+        "scriptName": "SetBulletsInClip",
+        "highlight": false,
+        "params": [
+          {
+            "id": "count",
+            "type": "number",
+            "initialValue": "35"
+          }
+        ]
+      },
+      {
+        "id": "set-bullet-stock-count",
+        "c2id": 3,
+        "scriptName": "SetBulletStockCount",
+        "highlight": false,
+        "params": [
+          {
+            "id": "count",
+            "type": "number",
+            "initialValue": "350"
+          }
+        ]
+      },
+      {
+        "id": "set-size-of-stock",
+        "c2id": 13,
+        "scriptName": "SetSizeOfStock",
+        "highlight": false,
+        "params": [
+          {
+            "id": "size",
+            "type": "number",
+            "initialValue": "350"
+          }
+        ]
+      },
+      {
+        "id": "set-size-of-clip",
+        "c2id": 4,
+        "scriptName": "SetSizeOfClip",
+        "highlight": false,
+        "params": [
+          {
+            "id": "size",
+            "type": "number",
+            "initialValue": "35"
+          }
+        ]
+      },
+      {
+        "id": "set-interval",
+        "c2id": 5,
+        "scriptName": "SetInterval",
+        "highlight": false,
+        "params": [
+          {
+            "id": "interval",
+            "type": "number",
+            "initialValue": "1000"
+          }
+        ]
+      },
+      {
+        "id": "set-reload-time",
+        "c2id": 6,
+        "scriptName": "SetReloadTime",
+        "highlight": false,
+        "params": [
+          {
+            "id": "interval",
+            "type": "number",
+            "initialValue": "1000"
+          }
+        ]
+      },
+      {
+        "id": "set-ready-to-shoot",
+        "c2id": 7,
+        "scriptName": "SetReadyToShoot",
+        "highlight": false
+      },
+      {
+        "id": "disable-weapon-during",
+        "c2id": 8,
+        "scriptName": "DisableWeaponDuring",
+        "highlight": false,
+        "params": [
+          {
+            "id": "during",
+            "type": "number",
+            "initialValue": "-1"
+          }
+        ]
+      },
+      {
+        "id": "enable-weapon",
+        "c2id": 9,
+        "scriptName": "EnableWeapon",
+        "highlight": false
+      },
+      {
+        "id": "set-shoot-key",
+        "c2id": 10,
+        "scriptName": "SetShootKey",
+        "highlight": false,
+        "params": [
+          {
+            "id": "shoot-key",
+            "type": "keyb"
+          }
+        ]
+      },
+      {
+        "id": "set-reload-key",
+        "c2id": 11,
+        "scriptName": "SetReloadKey",
+        "highlight": false,
+        "params": [
+          {
+            "id": "reload-key",
+            "type": "keyb"
+          }
+        ]
+      },
+      {
+        "id": "set-bullet-instance",
+        "c2id": 12,
+        "scriptName": "SetBulletInstance",
+        "highlight": false,
+        "params": [
+          {
+            "id": "bullet",
+            "type": "object",
+            "allowedPluginIds": [
+              "Sprite"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "set-bullet-by-name",
+        "c2id": 15,
+        "scriptName": "SetBulletByName",
+        "highlight": false,
+        "params": [
+          {
+            "id": "bullet",
+            "type": "objectname",
+            "allowedPluginIds": [
+              "Sprite"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "reload",
+        "c2id": 16,
+        "scriptName": "Reload",
+        "highlight": false
+      },
+      {
+        "id": "cancel-reload",
+        "c2id": 14,
+        "scriptName": "CancelReload",
+        "highlight": false
+      }
+    ],
+    "expressions": [
+      {
+        "id": "bullets-in-clip",
+        "c2id": 0,
+        "expressionName": "BulletsInClip",
+        "returnType": "number"
+      },
+      {
+        "id": "bullets-in-stock",
+        "c2id": 1,
+        "expressionName": "BulletsInStock",
+        "returnType": "number"
+      },
+      {
+        "id": "clip-size",
+        "c2id": 2,
+        "expressionName": "ClipSize",
+        "returnType": "number"
+      },
+      {
+        "id": "shots-interval",
+        "c2id": 3,
+        "expressionName": "ShotsInterval",
+        "returnType": "number"
+      },
+      {
+        "id": "reload-time",
+        "c2id": 4,
+        "expressionName": "ReloadTime",
+        "returnType": "number"
+      },
+      {
+        "id": "is-ready-to-shoot",
+        "c2id": 5,
+        "expressionName": "IsReadyToShoot",
+        "returnType": "number"
+      },
+      {
+        "id": "is-disabled",
+        "c2id": 6,
+        "expressionName": "IsDisabled",
+        "returnType": "number"
+      },
+      {
+        "id": "last-shoot-bullet-id",
+        "c2id": 7,
+        "expressionName": "LastShootBulletId",
+        "returnType": "number"
+      },
+      {
+        "id": "is-reloading",
+        "c2id": 8,
+        "expressionName": "IsReloading",
+        "returnType": "number"
+      },
+      {
+        "id": "last-shoot-time",
+        "c2id": 9,
+        "expressionName": "LastShootTime",
+        "returnType": "number"
+      }
+    ]
+  }
+}

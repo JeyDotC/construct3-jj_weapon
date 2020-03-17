@@ -1,0 +1,352 @@
+{
+  "languageTag": "en-US",
+  "fileDescription": "Strings for jj_Weapon Plugin",
+  "text": {
+    "behaviors": {
+      "jeydotc_jj_weapon": {
+        "name": "jj_Weapon",
+        "description": "Creates bullets by rules",
+        "help-url": "https://github.com/armandoalonso/c3IDE",
+        "properties": {
+          "clip-size": {
+            "name": "Clip size",
+            "desc": "Count of bullets in each clip (-1 = infinity)"
+          },
+          "bullets-in-clip": {
+            "name": "Bullets in clip",
+            "desc": "Bullets in clip at start (-1 = infinity)"
+          },
+          "bullets-in-stock": {
+            "name": "Bullets in stock",
+            "desc": "Count of bullets for current weapon (-1 = infinity)"
+          },
+          "stock-size": {
+            "name": "Stock size",
+            "desc": "Volume of current weapon for bullets. Max bullets count. (-1 = infinity)"
+          },
+          "shoot-interval": {
+            "name": "Shoot interval",
+            "desc": "Interval in milliseconds between shoots"
+          },
+          "reload-time": {
+            "name": "Reload time",
+            "desc": "Reload time in milliseconds"
+          },
+          "auto-reload": {
+            "name": "Auto-reload",
+            "desc": "When clip is empty, weapon start reload automatically",
+            "items": {
+              "Yes": "Yes",
+              "No": "No"
+            }
+          },
+          "user-control": {
+            "name": "User control",
+            "desc": "Type of weapon firing: None = weapon not controlling by player; Single = for each shoot user must make click (down and up key); Burst = down shoot-key for constantly shoot and up for enought;",
+            "items": {
+              "None": "None: weapon not controlled by player",
+              "Single": "Single: for each shoot user must down and up shoot-key",
+              "Burst": "Burst: down shoot-key for constantly shoot"
+            }
+          },
+          "enabled": {
+            "name": "Enabled",
+            "desc": "If disabled, weapon can not make shoots",
+            "items": {
+              "Yes": "Yes",
+              "No": "No"
+            }
+          },
+          "shoot-key": {
+            "name": "Shoot key",
+            "desc": "Name or code of key for shoot"
+          },
+          "reload-key": {
+            "name": "Reload key",
+            "desc": "Name or code of key for reload"
+          },
+          "image-point": {
+            "name": "Weapon image-point",
+            "desc": "Set point for the weapon from which bullets will fly"
+          }
+        },
+        "aceCategories": {
+          "custom": "Custom"
+        },
+        "conditions": {
+          "is-ready": {
+            "list-name": "Is Ready",
+            "display-text": "{my} is ready to shoot",
+            "description": "True when the object is make pause and ready to shoot now."
+          },
+          "bullets-in-clip": {
+            "list-name": "Bullets In Clip",
+            "display-text": "{my} clip bullet count {0} {1}",
+            "description": "True when the object clip have some bullets.",
+            "params": {
+              "comparison": {
+                "name": "Comparison",
+                "desc": "This is the parameters description"
+              },
+              "bullets-count": {
+                "name": "Bullets Count",
+                "desc": "The bullets in clip."
+              }
+            }
+          },
+          "reload-start": {
+            "list-name": "Reload Start",
+            "display-text": "{my} start reloading",
+            "description": "True when weapon is reload start."
+          },
+          "reload-finish": {
+            "list-name": "Reload Finish",
+            "display-text": "{my} finish reloading",
+            "description": "True when weapon reload finishes."
+          },
+          "shoot": {
+            "list-name": "Shoot",
+            "display-text": "{my} shoot",
+            "description": "True when weapon makes a shoot."
+          },
+          "disabled": {
+            "list-name": "Disabled",
+            "display-text": "{my} is disabled",
+            "description": "True when weapon is disabled"
+          },
+          "enabled": {
+            "list-name": "Enabled",
+            "display-text": "{my} is enabled",
+            "description": "True when weapon is enabled"
+          },
+          "reload-canceled": {
+            "list-name": "Reload Canceled",
+            "display-text": "{my} canceled reload",
+            "description": "True when weapon reload was canceled"
+          },
+          "last-shoot-time": {
+            "list-name": "Last Shoot Time",
+            "display-text": "{my} Last shoot time {0} {1}",
+            "description": "True when has passed some time since last shoot",
+            "params": {
+              "comparison": {
+                "name": "Comparison",
+                "desc": ""
+              },
+              "last-shoot-time": {
+                "name": "Last Shoot Time",
+                "desc": "Last shoot time in miliseconds"
+              }
+            }
+          },
+          "is-reloading": {
+            "list-name": "Is Reloading",
+            "display-text": "{my} is reloading",
+            "description": "True when the weapon is currently reloading"
+          }
+        },
+        "actions": {
+          "make-a-shoot": {
+            "list-name": "Make A Shoot",
+            "display-text": "{my} shoot now",
+            "description": "Make a one shoot"
+          },
+          "add-bullets-to-clip": {
+            "list-name": "Add Bullets To Clip",
+            "display-text": "{0} bullets add to clip for {my}",
+            "description": "Add bullets to a clip for object. You can use negative values (e.g.: - 5) to remove bullets from clip",
+            "params": {
+              "count": {
+                "name": "Count",
+                "desc": "Bullets to add to the clip"
+              }
+            }
+          },
+          "set-bullets-in-clip": {
+            "list-name": "Set bullets in the clip",
+            "display-text": "The clip of {my} have {0} bullets now",
+            "description": "Set bullets count in the clip of object. From 0 to -1 (=infinity)",
+            "params": {
+              "count": {
+                "name": "Count",
+                "desc": "Bullets to set in the clip"
+              }
+            }
+          },
+          "set-bullet-stock-count": {
+            "list-name": "Set bullets in the stock",
+            "display-text": "The {my} have {0} bullets in stock now",
+            "description": "Set bullets count in the stock of object. From 0 to -1 (=infinity)",
+            "params": {
+              "count": {
+                "name": "Count",
+                "desc": "Bullets to set in to the stock"
+              }
+            }
+          },
+          "set-size-of-stock": {
+            "list-name": "Set the stock size",
+            "display-text": "The {my} size of stock is {0} now",
+            "description": "Set size of stock for the current weapon. From 0 to -1 (=infinity)",
+            "params": {
+              "size": {
+                "name": "Size",
+                "desc": "New stock size"
+              }
+            }
+          },
+          "set-size-of-clip": {
+            "list-name": "Set the clip size",
+            "display-text": "The {my} size of clip is {0} now",
+            "description": "Set size of clip for the current weapon. From 0 to -1 (=infinity)",
+            "params": {
+              "size": {
+                "name": "Size",
+                "desc": "New clip size"
+              }
+            }
+          },
+          "set-interval": {
+            "list-name": "Set shoot interval",
+            "display-text": "Set {my} shots interval to <i>{0}</i> milliseconds",
+            "description": "Set interval between shoots for current weapon (ms)",
+            "params": {
+              "interval": {
+                "name": "Interval",
+                "desc": "Set interval between shots for current weapon (milliseconds)"
+              }
+            }
+          },
+          "set-reload-time": {
+            "list-name": "Set Reload Time",
+            "display-text": "Set {my} reload interval to <i>{0}</i> milliseconds",
+            "description": "Set interval between shoots for current weapon (ms)",
+            "params": {
+              "interval": {
+                "name": "Interval",
+                "desc": "Set interval between shots for current weapon (milliseconds)"
+              }
+            }
+          },
+          "set-ready-to-shoot": {
+            "list-name": "Set Ready To Shoot",
+            "display-text": "Set {my} ready for a shoot",
+            "description": "Set the weapon to ready for a shoot"
+          },
+          "disable-weapon-during": {
+            "list-name": "Disable Weapon During",
+            "display-text": "Disable {my} on <i>{0}</i> milliseconds",
+            "description": "Set the disabled status for weapon during some time. (-1 = not limited in time)",
+            "params": {
+              "during": {
+                "name": "During",
+                "desc": "Disable weapon during in milliseconds. -1 means \"not limited by time\"."
+              }
+            }
+          },
+          "enable-weapon": {
+            "list-name": "Enable weapon",
+            "display-text": "Enable {my}",
+            "description": "Set the weapon enabled"
+          },
+          "set-shoot-key": {
+            "list-name": "Set shoot key",
+            "display-text": "Shoot key for {my} is {0} now",
+            "description": "Set the shoot key for weapon",
+            "params": {
+              "shoot-key": {
+                "name": "Shoot Key",
+                "desc": "Shoot key"
+              }
+            }
+          },
+          "set-reload-key": {
+            "list-name": "Set reload key",
+            "display-text": "Reload key for {my} is {0} now",
+            "description": "Set the reload key for weapon",
+            "params": {
+              "reload-key": {
+                "name": "Reload Key",
+                "desc": "Reload key"
+              }
+            }
+          },
+          "set-bullet-instance": {
+            "list-name": "Set bullet instance",
+            "display-text": "Bullet of {my} now is {0}",
+            "description": "Set the weapon bullet type",
+            "params": {
+              "bullet": {
+                "name": "Bullet",
+                "desc": "Choose the bullet object for weapon"
+              }
+            }
+          },
+          "set-bullet-by-name": {
+            "list-name": "Set bullet instance by name",
+            "display-text": "Bullet of {my} now is {0}",
+            "description": "Set the weapon bullet type by name",
+            "params": {
+              "bullet": {
+                "name": "Bullet",
+                "desc": "Choose the bullet object for weapon"
+              }
+            }
+          },
+          "reload": {
+            "list-name": "Reload weapon",
+            "display-text": "{my} reload now",
+            "description": "Start reload"
+          },
+          "cancel-reload": {
+            "list-name": "Cancel Reload",
+            "display-text": "{my} cancel reload now",
+            "description": "Cancel the current reload"
+          }
+        },
+        "expressions": {
+          "bullets-in-clip": {
+            "translated-name": "BulletsInClip",
+            "description": "The count bullets in the clip now."
+          },
+          "bullets-in-stock": {
+            "translated-name": "BulletsInStock",
+            "description": "The count bullets in the stock now."
+          },
+          "clip-size": {
+            "translated-name": "ClipSize",
+            "description": "The clip size."
+          },
+          "shots-interval": {
+            "translated-name": "ShotsInterval",
+            "description": "The shots interval in miliseconds."
+          },
+          "reload-time": {
+            "translated-name": "ReloadTime",
+            "description": "The reloat time in miliseconds."
+          },
+          "is-ready-to-shoot": {
+            "translated-name": "IsReadyToShoot",
+            "description": "Is the weapon ready to shoot? 1 = true, 0 = false"
+          },
+          "is-disabled": {
+            "translated-name": "IsDisabled",
+            "description": "Is the weapon disabled? 1 = true, 0 = false"
+          },
+          "last-shoot-bullet-id": {
+            "translated-name": "LastShootBulletId",
+            "description": "Gets the last shoot bullet UID, this only works on shoot"
+          },
+          "is-reloading": {
+            "translated-name": "IsReloading",
+            "description": "Is the weapon reloading? 1 = true, 0 = false"
+          },
+          "last-shoot-time": {
+            "translated-name": "LastShootTime",
+            "description": "Gets the last time the weapon was shot"
+          }
+        }
+      }
+    }
+  }
+}
