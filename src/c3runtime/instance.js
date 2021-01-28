@@ -49,11 +49,10 @@
                 return Date.now() - this.last_shoot_time;
             };
 
+            this._keyboardDisposables = null;
+
             if (properties)
             {
-                console.log(properties);
-                console.log(this);
-
                 this.clip_size = properties[0];
                 this.clip_bullets_count = properties[1];
                 this.bullets_count = properties[2];
@@ -75,8 +74,7 @@
                 this.bullet_point_index = parseInt(properties[11], 10);
             }
 
-            window.addEventListener('keydown', e => this._KeyDown(e));
-            window.addEventListener('keyup', e => this._KeyUp(e));
+            this._BindEvents();
 
             // Opt-in to getting calls to Tick()
             this._StartTicking();
@@ -84,7 +82,21 @@
 
         Release()
         {
+            if (this._keyboardDisposables) {
+                this._keyboardDisposables.Release();
+                this._keyboardDisposables = null
+            }
             super.Release();
+        }
+
+        _BindEvents() {
+            if (this._keyboardDisposables)
+                return;
+            const rt = this._runtime.Dispatcher();
+            this._keyboardDisposables = new C3.CompositeDisposable(
+                C3.Disposable.From(rt, "keydown", e=>this._KeyDown(e.data)),
+                C3.Disposable.From(rt, "keyup", e=>this._KeyUp(e.data))
+            );
         }
 
         SaveToJson()
