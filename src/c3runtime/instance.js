@@ -1,5 +1,7 @@
 "use strict";
 {
+    const C3 = self.C3;
+    
     C3.Behaviors.JeyDotC_jj_Weapon.Instance = class jj_WeaponInstance extends C3.SDKBehaviorInstanceBase
     {
         constructor(behInst, properties)
@@ -101,7 +103,7 @@
 
         SaveToJson()
         {
-            var o = {
+            const o = {
                 // Key states
                 "shk": this.shootkey,
                 "rlk": this.reloadkey,
@@ -277,16 +279,31 @@
             }
         }
 
-        GetDebuggerProperties()
-        {
-            return [
-            {
-                title: "jj_Weapon",
-                properties: [
-                    //{name: ".current-animation",	value: this._currentAnimation.GetName(),	onedit: v => this.CallAction(Acts.SetAnim, v, 0) },
-                ]
-            }];
-        }
+        // Disabled for now since, for some reason, instead of updating the table at the debug view, it just create a
+        // new table EVERY FRAME!
+        //GetDebuggerProperties()
+        //{
+        //    const Acts = C3.Behaviors.JeyDotC_jj_Weapon.Acts;
+        //    return [
+        //    {
+        //        title: "$jj_Weapon",
+        //        properties: [
+        //                {name: "$bullets_count", value: this.bullets_count, onedit: v => this.CallAction(Acts.SetSizeOfStock, v) },
+        //                {name: "$max_bullets_count", value: this.max_bullets_count, onedit: v => this.CallAction(Acts.SetSizeOfStock, v) },
+        //                {name: "$clip_bullets_count", value: this.clip_bullets_count, onedit: v => this.CallAction(Acts.SetBulletsInClip, v) },
+        //                {name: "$clip_size", value: this.clip_size, onedit: v => this.CallAction(Acts.SetSizeOfClip, v) },
+        //                {name: "$enabled", value: this.enabled, /*onedit: v => this.CallAction(Acts.enabled, v)*/ },
+        //                {name: "$ready", value: this.ready, /*onedit: v => this.CallAction(Acts.ready, v)*/ },
+        //                {name: "$interval", value: this.interval, onedit: v => this.CallAction(Acts.SetInterval, v) },
+        //                {name: "$reload_time", value: this.reload_time, onedit: v => this.CallAction(Acts.SetReloadTime, v) },
+        //                {name: "$auto_reload", value: this.auto_reload, /*onedit: v => this.CallAction(Acts.auto_reload, v)*/ },
+        //                {name: "$user_control", value: this.user_control, /*onedit: v => this.CallAction(Acts.user_control, v)*/ },
+        //                {name: "$shoot_keycode", value: this.shoot_keycode, onedit: v => this.CallAction(Acts.SetShootKey, v) },
+        //                {name: "$reload_keycode", value: this.reload_keycode, onedit: v => this.CallAction(Acts.SetReloadKey, v) },
+        //                {name: "$bullet_instance.sid", value: this.bullet_instance.sid, /*onedit: v => this.CallAction(Acts.bullet_instance.sid, v)*/ },
+        //        ]
+        //    }];
+        //}
 
         _KeyDown(e)
         {

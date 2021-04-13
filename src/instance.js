@@ -1,5 +1,7 @@
 "use strict";
 {
+    const SDK = self.SDK;
+    
     const BEHAVIOR_CLASS = SDK.Behaviors.JeyDotC_jj_Weapon;
 
     BEHAVIOR_CLASS.Instance = class jj_WeaponInstance extends SDK.IBehaviorInstanceBase

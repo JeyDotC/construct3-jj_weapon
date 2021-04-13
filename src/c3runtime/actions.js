@@ -1,5 +1,7 @@
 "use strict";
 {
+    const C3 = self.C3;
+    
     C3.Behaviors.JeyDotC_jj_Weapon.Acts = {
         MakeAShoot()
         {
@@ -97,7 +99,7 @@
             if (ms < 0 && ms != -1) return;
             this.enabled = false;
             if (ms == -1) return;
-            var obj = this;
+            const obj = this;
             setTimeout(function()
             {
                 obj.enabled = true;
@@ -121,14 +123,12 @@
 
         SetBulletInstance(bullet)
         {
-            console.log(bullet);
             this.bullet_instance = bullet;
         },
 
         SetBulletByName(bulletName)
         {
             const bullet = this._runtime.GetObjectClassByName(bulletName);
-            console.log(bullet);
             this.bullet_instance = bullet;
         },
 
