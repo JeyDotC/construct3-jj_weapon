@@ -113,12 +113,12 @@
 
         SetShootKey(shootKey)
         {
-            this.shoot_keycode = key;
+            this.shoot_keycode = shootKey;
         },
 
         SetReloadKey(reloadKey)
         {
-            this.reload_keycode = key;
+            this.reload_keycode = reloadKey;
         },
 
         SetBulletInstance(bullet)
@@ -128,8 +128,7 @@
 
         SetBulletByName(bulletName)
         {
-            const bullet = this._runtime.GetObjectClassByName(bulletName);
-            this.bullet_instance = bullet;
+            this.bullet_instance = this._runtime.GetObjectClassByName(bulletName);
         },
 
         Reload()
