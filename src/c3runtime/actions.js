@@ -71,7 +71,7 @@
                         count = -1;
                     }
                     this.clip_bullets_count = this.clip_size;
-                    C3.Behaviors.JeyDotC_jj_Weapon.Cnds.SetBulletStockCount.call(this, count == -1 ? -1 : this.bullets_count + count);
+                    C3.Behaviors.JeyDotC_jj_Weapon.Acts.SetBulletStockCount.call(this, count == -1 ? -1 : this.bullets_count + count);
                 }
             }
         },
