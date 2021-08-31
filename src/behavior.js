@@ -3,7 +3,7 @@
     const SDK = self.SDK;
 
     const BEHAVIOR_ID = "JeyDotC_jj_Weapon";
-    const BEHAVIOR_VERSION = "1.0.1.2";
+    const BEHAVIOR_VERSION = "1.0.1.3";
     const BEHAVIOR_CATEGORY = "general";
 
     const BEHAVIOR_CLASS = SDK.Behaviors.JeyDotC_jj_Weapon = class jj_WeaponBehavior extends SDK.IBehaviorBase
