@@ -135,7 +135,7 @@
 
             if (this.bullet_instance)
             {
-                o["bins"] = this.bullet_instance.sid;
+                o["bins"] = this.bullet_instance.GetSID();
             }
 
             return o;
