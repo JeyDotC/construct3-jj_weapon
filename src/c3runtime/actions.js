@@ -96,19 +96,16 @@
 
         DisableWeaponDuring(ms)
         {
-            if (ms < 0 && ms != -1) return;
             this.enabled = false;
-            if (ms == -1) return;
-            const obj = this;
-            setTimeout(function()
-            {
-                obj.enabled = true;
-            }, ms);
+            this.disableSince = Date.now;
+            this.disableFor = ms;
+            this.disabledPermanently = ms < 0;
         },
 
         EnableWeapon()
         {
             this.enabled = true;
+            this.disabledPermanently = false;
         },
 
         SetShootKey(shootKey)

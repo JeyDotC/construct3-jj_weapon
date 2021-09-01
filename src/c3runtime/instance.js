@@ -22,6 +22,9 @@
             this.clip_bullets_count = 0;
             this.clip_size = 0;
             this.enabled = true;
+            this.disabledPermanently = false;
+            this.disableFor = 0;
+            this.disableSince = 0;
             this.reload = false;
             this.reloadCancel = false;
             this.ready = true;
@@ -118,6 +121,9 @@
                 "cbc": this.clip_bullets_count,
                 "cs": this.clip_size,
                 "e": this.enabled,
+                // Store the remaining disable time unless it is a negative value.
+                "df": Math.max(this.disableFor  - (Date.now - this.disableSince), 0),
+                "dp": this.disabledPermanently,
                 "rl": this.reload,
                 "rlc": this.reloadCancel,
                 "rd": this.ready,
@@ -157,6 +163,9 @@
             this.clip_bullets_count = o["cbc"];
             this.clip_size = o["cs"];
             this.enabled = o["e"];
+            this.disableFor = o["df"];
+            this.disableSince = Date.now;
+            this.disabledPermanently = o["dp"];
             this.reload = o["rl"];
             this.reloadCancel = o["rlc"];
             this.ready = o["rd"];
@@ -188,6 +197,8 @@
             this.simshoot = false;
             this.simreload = false;
             this.reloadkey = false;
+
+            this.enabled = this.enabled || (!this.disabledPermanently && Date.now - this.disableSince > this.disableFor);
 
             if (this.user_control == 'Single')
             {
